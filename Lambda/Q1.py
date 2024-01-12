@@ -1,3 +1,6 @@
+#---------------------------------------- EASY -------------------------------------------------------
+
+
 # Write a lambda function to add two numbers, and then use it to find the sum of 5 and 7.
 
 sum = lambda x,y: x+y
