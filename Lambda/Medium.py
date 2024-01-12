@@ -1,4 +1,4 @@
-#-------------------------------- INTERMEDIATE ---------------------------------------
+#-------------------------------- MEDIUM ---------------------------------------
 
 # Create lambda functions to calculate the square and cube of a number. Use them to find the square of 9 and the cube of 4.
 square = lambda x: x**2 
