@@ -1,26 +1,17 @@
-class ArithmeticSequence:
-    def __init__(self, n, a1, d):
-        self.n = n
-        self.a1 = a1
-        self.d = d
 
-    def nTerm(self):
-        return self.a1 + (self.n - 1) * self.d
+A1 = int(input("First list, first term: "))
+D = int(input("First list, Common difference: "))
+N = int(input("First list, Term Number: "))
 
-    def nSum(self):
-        return self.n / 2 * (2 * self.a1 + (self.n - 1) * self.d)
+a1 = int(input("Second list, first term: "))
+d = int(input("Second list, Common difference: "))
+n = int(input("Second list, Term Number: "))
 
-# Get user input
-n = int(input("Term Number: "))
-d = int(input("Common Difference: "))
-a1 = int(input("First Term: "))
+firstList = [A1 + (x + 1) * D for x in range(1, N + 1)]
+secondList = [a1 + (z + 1) * d for z in range(1, n + 1)]
 
-# Create an instance of the ArithmeticSequence class
-sequence = ArithmeticSequence(n, a1, d)
+totalList = firstList
+totalList.extend(secondList)
+totalList.sort()
 
-# Calculate nth term and sum of the first n terms
-nTermResult = sequence.nTerm()
-nSumResult = sequence.nSum()
-
-# Display the results
-print(f"nth Term: {nTermResult}\nSum of the first n terms: {nSumResult}")
+print(totalList)

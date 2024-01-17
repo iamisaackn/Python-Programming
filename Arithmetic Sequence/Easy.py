@@ -58,6 +58,9 @@ Check if a given sequence is an arithmetic sequence:
 Write a Python function that checks if a given list of numbers forms an arithmetic sequence.
 The function should return True if it is an arithmetic sequence and False otherwise.
 """
+def isArithmeticSequence():
+    pass
+    
 
 '''
 Q4).
@@ -163,6 +166,14 @@ Write a Python lambda function that takes the first term (a1),
 common difference (d), and the term number (n) as arguments 
 and returns the nth term of the arithmetic sequence.
 '''
+nTerm = lambda a1, n, d: a1 + (n + 1) * d
+
+a1 = int(input("First Term: "))
+d = int(input("Common Difference: ")) 
+n = int(input("Term Number: "))
+
+sequence = nTerm(a1, n, d)
+print(f"nth Term: {sequence}")
 
 '''
 Q8).
@@ -171,12 +182,39 @@ Create a Python dictionary where keys are the names of different arithmetic sequ
 and values are tuples representing the first term, common difference, and term number.
 '''
 
+ArithmeticSequence = {}
+
+sequenceName = input("Sequence Name: ")
+a1 = int(input("First Term: "))
+d = int(input("Common Difference: "))
+n = int(input("Term Number: "))
+
+ArithmeticSequence[sequenceName] = (a1, d, n)
+
+sequenceValue = [a1 + (i + 1) * d for i in range(1, n + 1)]
+
+print(f"Arithmetic Sequence: {sequenceValue}")
+print(f"Dictionary: {ArithmeticSequence}")
+
 '''
 Q9).
 Check for odd or even terms:
 Write a Python function that takes an arithmetic sequence as a list
 and prints whether each term is odd or even. Use a loop and if conditions.
 '''
+
+a1 = int(input("First Term: "))
+d = int(input("Common Difference: "))
+n = int(input("Term Number: "))
+
+sequence = [a1 + (i + 1) * d for i in range(1, n + 1)]
+print(f"Arithmetic Sequence: {sequence}")
+
+for term in sequence:  
+    if term % 2 !=0:
+        print("It is an Odd Number.")
+    else:
+        print("It is an Even Number.")
 
 '''
 Q10).
@@ -185,3 +223,20 @@ Write a Python function that takes two arithmetic sequences as lists
 and concatenates them into a new arithmetic sequence.
 Use lists and a for loop.
 '''
+
+A1 = int(input("First list, first term: "))
+D = int(input("First list, Common difference: "))
+N = int(input("First list, Term Number: "))
+
+a1 = int(input("Second list, first term: "))
+d = int(input("Second list, Common difference: "))
+n = int(input("Second list, Term Number: "))
+
+firstList = [A1 + (x + 1) * D for x in range(1, N + 1)]
+secondList = [a1 + (z + 1) * d for z in range(1, n + 1)]
+
+totalList = firstList
+totalList.extend(secondList)
+totalList.sort()
+
+print(totalList)
