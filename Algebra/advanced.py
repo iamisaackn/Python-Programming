@@ -30,3 +30,28 @@ print(f"Result: {inputs}")
 
 
 # Problem 2: Matrix Multiplication
+'''
+Perform matrix multiplication of two matrices
+'''
+
+def matrixMultiplication(matrix1, matrix2):
+    result = [[sum(a * b for a, b in zip(row, col)) for col in zip(*matrix2)] for row in matrix1]
+    return result
+
+matrix1 = [[1, 2, 3], [4, 5, 6]]
+matrix2 = [[7, 8], [9, 10], [11, 12]]
+
+tMatrix = matrixMultiplication(matrix1, matrix2)
+print(f"Answer: {tMatrix}")
+
+# Problem 2: Matrix Multiplication
+
+def matrix_multiplication(matrix1, matrix2):
+    return [[sum(a*b for a, b in zip(row, col)) for col in zip(*matrix2)] for row in matrix1]
+
+matrix1 = [[1, 2, 3], [4, 5, 6]]
+matrix2 = [[7, 8, 9], [10, 11, 12]]
+
+result = matrix_multiplication(matrix1, matrix2)
+print(f"Answer: {result}")
+
