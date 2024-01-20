@@ -89,7 +89,41 @@ Evaluate a polynomial for a given x
 Example: 2x^3 + 3x^2 - 4x + 1
 '''
 
+def polynomial(coefficients, x):
+    '''
+    2x^3 + 3x^2 - 4x +1 
+    coef is [2, 3, -4, 1]
+    exp is [^3, ^2, ^1, ^0]
+    enumerate - adds a counter to an iterable (e.g., a list), returning tuples containing the index and corresponding element from the iterable as you iterate over i    
+    '''
+    return sum(coef * x ** exp for exp, coef in enumerate(coefficients[::-1]))
+
+    
+x = float(input("Enter value \"x\": "))
+
+a = float(input("Enter value a: "))
+b = float(input("Enter value b: "))
+c = float(input("Enter value c: "))
+
+polyCoefficients = [a, b, c]
+result = polynomial(polyCoefficients, x)
+
+print(f"Answer: {result}")
+
 # Problem 4: Monte Carlo Integration
 '''
 Perform Monte Carlo integration to estimate the area under a curve
 '''
+import random
+
+def equation(func, a, b, num_samples = 50000):
+    count_inside = sum(1 for _ in range(num_samples) if func(random.uniform(a, b)) > random.uniform(0, func(b)))
+    area_estimate = (count_inside/num_samples) * (b - a) * func(b)
+    return area_estimate
+
+def curve(x):
+    return x**2 + 1
+
+result = equation(curve, 0, 2)
+
+print(f"Answer: {result}")
